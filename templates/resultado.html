@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Resultado Da Partida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="menu-page">
+    <div class="sidebar">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do Jogo" class="game-logo">
+        <h3 class="nome-jogador">{{ nome }}</h3>
+        <form action="{{ url_for('menu') }}" method="GET">
+            <button type="submit">Menu</button>
+        </form>
+        <form action="{{ url_for('sair') }}" method="GET">
+            <button type="submit">Sair do Jogo</button>
+        </form>
+    </div>
+    <div class="content">
+        <h2 class="title">Tabela De Resultados</h2>
+        <div class="pokemon-container">
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Vitorias: {{resultado_partida_V}}</p>
+            </div>
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Empates: {{resultado_partida_E}}</p>
+            </div>
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Derrotas: {{resultado_partida_D}}</p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="content">
+        <h2 class="title">Historico De Resultados</h2>
+        <div class="pokemon-container">
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Vitorias: {{resultado_geral_V}}</p>
+            </div>
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Empates: {{resultado_geral_E}}</p>
+            </div>
+            <div class="pokemon-card">
+                <img src="{{ url_for('static', filename='images/999.png') }}" alt="Pokémon" width="100">
+                <p>Derrotas: {{resultado_geral_D}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Criar Conta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="begin-page">
+    <div class="container">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do PokeTrunfo" class="logo">
+        <div class="button-right">  
+            <h2>CRIAR CONTA</h2>
+            <form action="/criar_conta" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="nome" id="nome" name="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <button type="submit">Criar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

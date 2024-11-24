@@ -1,0 +1,175 @@
+/*Tag HTML*/
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 125%;
+}
+
+label {
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: block;
+}
+
+input {
+    height: 40px;
+    margin-bottom: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button { 
+    width: 185px;
+    height: 40px;
+    margin: 4px;
+    background-color: #FF002B;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { 
+    background-color: #ff002b98; 
+}
+
+/*Class*/
+
+.menu-page { 
+    display: flex;
+    background-color: #222222;
+}
+
+.content { 
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.content-pergunta{
+    font-size: 20px;
+}
+
+.sidebar-menu {
+    width: 200px;
+    background-color: #00001C;
+    padding: 1px;
+    height: 255vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #00001C;
+    padding: 1px;
+    height: 100vh;
+}
+
+.game-logo { 
+    width: 100%;
+}
+
+.nome-jogador {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.begin-page { 
+    display: flex;
+    height: 70vh;
+    background-color: #00001C;
+}
+
+.container { 
+    position: relative; /* Define como referência para os elementos filhos */
+    text-align: left; /* Opcional: Alinha o conteúdo à esquerda */
+    display: flex; /* Utilizando flexbox para organizar os itens */
+    justify-content: flex-start; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    top: 75px; /* Posição */
+    left: 250px; /* Posição */
+}
+
+.logo { 
+    width: 400px; /* Tamanho da imagem */
+    margin-right: 20px; /* Espaçamento entre a logo e os botões */
+    position: relative; /* Deixa a logo no fluxo normal do Flexbox */
+}
+
+.button-right{
+    display: flex; /* Permite alinhar os botões em linha ou coluna */
+    flex-direction: column; /* Empilha os botões verticalmente */
+    align-items: flex-start; /* Garante alinhamento ao lado direito */
+    margin-left: 20px; /* Espaçamento da logo para os botões */
+    text-align: left;
+}
+
+.error-message{ 
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 3px solid #f5c6cb;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.pokemon-card {
+    background-color: #f9f9f9c1;
+    padding: 5px;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card img {
+    border-radius: 5px;
+    margin-bottom: 2px;
+    width: 70px;
+    height: 70px;
+}
+
+.pokemon-card p {
+    margin: 3px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.pokemon-card button {
+    width: 140px;
+    height: 40px;
+    margin: 5px;
+    background-color: #FF002B;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.pokemon-card select {
+    width: 140px;
+    margin: 6.5px;
+    padding: 2px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

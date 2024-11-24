@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Bem-vindo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="begin-page">
+    <div class="container">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do PokeTrunfo" class="logo">
+        <div class="button-right"> 
+            <form action="{{ url_for('login') }}" method="GET">
+                <button type="submit">Login</button>
+            </form>
+            <form action="{{ url_for('criar_conta') }}" method="GET">
+                <button type="submit">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

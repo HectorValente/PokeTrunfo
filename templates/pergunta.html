@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Partida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="menu-page">
+    <div class="sidebar">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do Jogo" class="game-logo">
+        <h3 class="nome-jogador">{{ nome }}</h3>
+        <form action="{{ url_for('menu') }}" method="GET">
+            <button type="submit">Menu</button>
+        </form>
+        <form action="{{ url_for('historico') }}" method="GET">
+            <button type="submit">Histórico Partidas</button>
+        </form>
+        <form action="{{ url_for('sair') }}" method="GET">
+            <button type="submit">Sair do Jogo</button>
+        </form>
+    </div>
+    <div class="content">
+        <p class="content-pergunta">Você deseja abrir o último jogo não finalizado?</p>
+        <br>
+        <form action="{{ url_for('pergunta') }}" method="GET">
+            <button type="submit">Sim</button>
+        </form>
+        <form action="{{ url_for('pergunta') }}" method="POST">
+            <button type="submit">Não</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Partida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="menu-page">
+    <div class="sidebar">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do Jogo" class="game-logo">
+        <h3 class="nome-jogador">{{ nome }}</h3>
+        <form action="{{ url_for('menu') }}" method="GET">
+            <button type="submit">Menu</button>
+        </form>
+        <form action="{{ url_for('sair') }}" method="GET">
+            <button type="submit">Sair do Jogo</button>
+        </form>
+    </div>
+    <div class="content">
+        <h2>Rodada: {{ id_rodada }} - Atributo Da Rodada: {{ atributo }}</h2>
+        <div class="pokemon-container">
+            <div style="display: flex; flex-direction: column; align-items: center">
+                <h2>Pokémon da CPU</h2>
+                {% for pokemon in pkm_cpu %}
+                {% if pokemon['id'] == pokemon_cpu %}
+                <div class="pokemon-card">
+                    <img src="{{ url_for('static', filename='images/' ~ pokemon['id'] ~ '.png') }}" alt="Pokémon" width="100">
+                    <p><strong>PV:</strong> {{ pokemon['hp'] }}</p>
+                    <p><strong>Ataque:</strong> {{ pokemon['atk'] }}</p>
+                    <p><strong>Ataque Especial:</strong> {{ pokemon['spAtk'] }}</p>
+                    <p><strong>Defesa:</strong> {{ pokemon['def'] }}</p>
+                    <p><strong>Defesa Especial:</strong> {{ pokemon['spDef'] }}</p>
+                    <p><strong>Velocidade:</strong> {{ pokemon['speed'] }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column">
+                <img style="width: 75px; margin: 25px 25px" src="{{ url_for('static', filename='images/vs.png') }}" alt="Pokémon" width="100">
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center">
+                <h2>Pokémon do Jogador</h2>
+                {% for pokemon in pkm_player %}
+                {% if pokemon['id'] == pokemon_player %}
+                <div class="pokemon-card">
+                    <img src="{{ url_for('static', filename='images/' ~ pokemon['id'] ~ '.png') }}" alt="Pokémon" width="100">
+                    <p><strong>PV:</strong> {{ pokemon['hp'] }}</p>
+                    <p><strong>Ataque:</strong> {{ pokemon['atk'] }}</p>
+                    <p><strong>Ataque Especial:</strong> {{ pokemon['spAtk'] }}</p>
+                    <p><strong>Defesa:</strong> {{ pokemon['def'] }}</p>
+                    <p><strong>Defesa Especial:</strong> {{ pokemon['spDef'] }}</p>
+                    <p><strong>Velocidade:</strong> {{ pokemon['speed'] }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <form action="{{ url_for('partida') }}" method="POST">
+                <button style="display: flex; justify-content: center; align-items: center" type="submit">Continuar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

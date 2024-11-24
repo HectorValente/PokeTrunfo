@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="menu-page">
+    <div class="sidebar-menu">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do Jogo" class="game-logo">
+        <h3 class="nome-jogador">{{ nome }}</h3>
+        <form action="{{ url_for('partida') }}" method="GET">
+            <button type="submit">Iniciar Partida</button>
+        </form>
+        <form action="{{ url_for('historico') }}" method="GET">
+            <button type="submit">Histórico Partidas</button>
+        </form>
+        <form action="{{ url_for('trocar_senha') }}" method="GET">
+            <input type="hidden" name="email" value="">
+            <button type="submit">Trocar Senha</button>
+        </form>
+        <form action="{{ url_for('deletar_conta') }}" method="GET">
+            <input type="hidden" name="email" value="">
+            <button type="submit">Deletar Usuário</button>
+        </form>
+        <form action="{{ url_for('sair') }}" method="GET">
+            <button type="submit">Sair</button>
+        </form>
+    </div>
+    <div class="content">
+        <h2>Manual de Regras do Jogo Super Trunfo Pokémon (1.2)</h2>
+        <p><strong>1. Objetivo do Jogo</strong><br>
+        O objetivo é vencer o maior número de rodadas, comparando os atributos dos Pokémon contra os do adversário (CPU). <br>
+        Cada jogador seleciona um atributo por rodada ou responde ao atributo escolhido pela CPU. Após 6 rodadas, quem tiver <br>
+        vencido mais rodadas é o vencedor. Empates são possíveis se ambos vencerem o mesmo número de rodadas.</p>
+
+        <p><strong>2. Estrutura do Jogo</strong><br>
+        • Jogadores: 1 jogador (Você) contra a CPU.<br>
+        • Rodadas: 6 rodadas por partida.<br>
+        • Cartas: Cada jogador (incluindo a CPU) recebe 6 cartas de Pokémon no início da partida. As cartas permanecem as mesmas <br>
+        durante todo o jogo.</p>
+
+        <p><strong>3. Atributos dos Pokémon</strong><br>
+        Cada Pokémon possui os seguintes atributos de estilo RPG:<br>
+        • PV (Pontos de Vida): Quantidade total de energia do Pokémon.<br>
+        • Ataque: Força dos golpes comuns.<br>
+        • Super Ataque: Poder dos ataques especiais.<br>
+        • Defesa: Capacidade de resistir a ataques comuns.<br>
+        • Super Defesa: Resistência a ataques especiais.<br>
+        • Velocidade: Agilidade e rapidez do Pokémon.</p>
+
+        <p><strong>4. Como Jogar</strong><br>
+        1. <strong>Seleção do Pokémon:</strong><br>
+        No início da partida, cada jogador recebe 6 Pokémon, que permanecem os mesmos até o final do jogo.<br>
+        2. <strong>Rodada de Jogador (Sua Vez):</strong><br>
+        Você escolhe uma carta de Pokémon e um atributo para competir contra o Pokémon escolhido pela CPU.<br>
+        3. <strong>Rodada da CPU (Vez da CPU):</strong><br>
+        A CPU escolhe um atributo para a rodada.<br>
+        Você deverá selecionar uma carta de Pokémon para competir no atributo escolhido pela CPU.<br>
+        4. <strong>Comparação:</strong><br>
+        O jogador ou a CPU com o maior valor no atributo escolhido vence a rodada. Se os valores forem iguais, a rodada termina em 
+        <br>empate.</p>
+
+        <p><strong>5. Carta Super Trunfo</strong><br>
+        • O Super Trunfo é uma carta especial representada pelo Pokémon Mewtwo (ID 151).<br>
+        • <strong>Atributos do Super Trunfo:</strong><br>
+        Todos os atributos do Mewtwo (PV, Ataque, Super Ataque, Defesa, Super Defesa e Velocidade) são iguais a 999, tornando-o <br>
+        invencível.<br>
+        • <strong>Como usar a carta Super Trunfo:</strong><br>
+        Caso você receba o Super Trunfo, ele pode ser usado em qualquer rodada para garantir a vitória. Porém, o Super Trunfo só <br>
+        pode ser jogado na sua vez de escolha.<br>
+        • <strong>Restrição:</strong><br>
+        O Super Trunfo não pode ser usado para empatar rodadas deliberadamente.</p>
+
+        <p><strong>6. Condições de Vitória</strong><br>
+        • O vencedor de cada rodada é o jogador ou CPU com o maior valor no atributo selecionado.<br>
+        • Após 6 rodadas, o jogador com mais rodadas vencidas será declarado o vencedor.<br>
+        • <strong>Empate:</strong> Caso ambos vençam o mesmo número de rodadas, o jogo termina empatado.</p>
+
+        <p><strong>7. Pontuação</strong><br>
+        • Cada rodada vencida concede 1 ponto ao jogador ou à CPU.<br>
+        • Rodadas empatadas não concedem pontos.</p>
+
+        <p><strong>8. Desempate</strong><br>
+        • Em caso de empate no número total de rodadas vencidas (3-3), a partida será declarada empatada.</p>
+
+        <p><strong>9. Interface do Jogo</strong><br>
+        • O jogo é jogado via interface web.<br>
+        • Na sua vez: Você escolhe uma carta e um atributo para competir.<br>
+        • Na vez da CPU: O atributo escolhido pela CPU será exibido na tela, e você escolherá uma carta para competir no <br>
+        atributo selecionado.</p>
+
+        <p><strong>10. Final da Partida</strong><br>
+        Após a sexta rodada, o sistema exibirá:<br>
+        • Quem venceu mais rodadas.<br>
+        • O vencedor da partida ou, em caso de empate, o resultado será "Empate".</p>
+
+        <p><strong>11. Estratégias e Boas Práticas</strong><br>
+        • Escolha atributos sabiamente: Analise as forças do seu Pokémon antes de selecionar um atributo.<br>
+        • Use o Super Trunfo estrategicamente: Utilize o Mewtwo para garantir vitórias cruciais ou salvar rodadas <br>
+        importantes.</p>
+    </div>
+</body>
+</html>

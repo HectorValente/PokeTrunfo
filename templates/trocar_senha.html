@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeTrunfo - Trocar Senha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="begin-page">
+    <div class="container">
+        <img src="{{ url_for('static', filename='poketrunfo-logo.webp') }}" alt="Logo do PokeTrunfo" class="logo">
+        <div class="button-right">
+            <h2>TROCAR SENHA</h2>
+            <form action="{{ url_for('trocar_senha') }}" method="POST">
+                <label for="senha">Nova Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                {% if error %}
+                    <div class="error-message">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <button type="submit">Trocar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
